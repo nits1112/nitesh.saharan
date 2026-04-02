@@ -1,0 +1,178 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0d1117; /* Sleek Dark Background */
+    color: #c9d1d9;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 20px 40px;
+    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+    border-bottom: 1px solid #30363d;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    background-color: #21262d;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #58a6ff;
+    border: 3px solid #58a6ff;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+}
+
+.glow-text {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #58a6ff;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.tagline {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    color: #8b949e;
+}
+
+/* Social Buttons */
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #21262d;
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid #30363d;
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+    color: #ffffff;
+}
+
+.social-btn.linkedin:hover { background-color: #0077b5; border-color: #0077b5; }
+.social-btn.facebook:hover { background-color: #1877f2; border-color: #1877f2; }
+.social-btn.instagram:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-color: transparent; }
+
+/* Experience Section */
+.section-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin: 40px 0 20px;
+    border-bottom: 2px solid #58a6ff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-color: #58a6ff;
+}
+
+.card h4 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin: 0 0 5px 0;
+}
+
+.company {
+    color: #58a6ff;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 10px;
+    color: #8b949e;
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+/* Animation classes for JS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
