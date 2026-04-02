@@ -3,13 +3,15 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #0d1117; /* Sleek Dark Background */
+    /* Added a dynamic glowing background */
+    background: radial-gradient(circle at top, #1a2035 0%, #0d1117 70%); 
     color: #c9d1d9;
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1200px; /* Made the layout much wider! */
     margin: 0 auto;
     padding: 20px;
 }
@@ -20,156 +22,181 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 80px 20px 40px;
-    background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+    padding: 80px 20px 60px;
     border-bottom: 1px solid #30363d;
 }
 
+/* Updated Profile Image Container */
 .profile-img {
-    width: 120px;
-    height: 120px;
-    background-color: #21262d;
+    width: 160px; 
+    height: 160px;
+    margin: 0 auto 25px;
     border-radius: 50%;
-    margin: 0 auto 20px;
+    border: 4px solid #58a6ff;
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.4); 
+    overflow: hidden; /* This keeps your photo perfectly round */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
-    color: #58a6ff;
-    border: 3px solid #58a6ff;
-    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+    background-color: #21262d;
+}
+
+.my-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents your photo from stretching */
 }
 
 .glow-text {
     color: #ffffff;
-    font-size: 2.5rem;
+    font-size: 3rem; /* Bigger Name */
     margin-bottom: 5px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 h2 {
     color: #58a6ff;
     font-weight: 400;
+    font-size: 1.5rem;
     margin-top: 0;
 }
 
 .tagline {
-    max-width: 600px;
-    margin: 20px auto;
-    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 25px auto;
+    font-size: 1.2rem;
     color: #8b949e;
 }
 
 /* Social Buttons */
 .social-links {
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .social-btn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background-color: #21262d;
     color: #c9d1d9;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 24px;
     transition: all 0.3s ease;
     border: 1px solid #30363d;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .social-btn:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
 .social-btn.linkedin:hover { background-color: #0077b5; border-color: #0077b5; }
 .social-btn.facebook:hover { background-color: #1877f2; border-color: #1877f2; }
 .social-btn.instagram:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-color: transparent; }
 
-/* Experience Section */
+/* Experience Section - Now a Grid! */
+.experience {
+    margin-top: 40px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Automatically places cards side-by-side on big screens */
+    gap: 30px;
+    margin-top: 30px;
+}
+
 .section-title {
     color: #ffffff;
-    font-size: 1.8rem;
-    margin: 40px 0 20px;
-    border-bottom: 2px solid #58a6ff;
+    font-size: 2rem;
+    margin: 0;
+    border-bottom: 3px solid #58a6ff;
     display: inline-block;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
 }
 
 .card {
-    background-color: #161b22;
+    background: linear-gradient(145deg, #161b22, #1c2128);
     border: 1px solid #30363d;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Creates a bouncy, interactive hover effect */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(88, 166, 255, 0.15);
     border-color: #58a6ff;
 }
 
 .card h4 {
     color: #ffffff;
-    font-size: 1.3rem;
-    margin: 0 0 5px 0;
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
 }
 
 .company {
     color: #58a6ff;
     font-weight: bold;
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
 }
 
 .card ul {
     padding-left: 20px;
+    margin: 0;
 }
 
 .card li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #8b949e;
 }
 
 /* Floating WhatsApp Button */
 .whatsapp-float {
     position: fixed;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     bottom: 40px;
     right: 40px;
     background-color: #25d366;
     color: #FFF;
     border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .whatsapp-float:hover {
     background-color: #128C7E;
-    transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+    transform: scale(1.15) rotate(-10deg); /* Playful interactive pop */
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
 }
 
-/* Animation classes for JS */
+/* Animations */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .fade-in.visible {
